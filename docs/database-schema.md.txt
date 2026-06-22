@@ -1,0 +1,43 @@
+# Database Schema
+
+## Sessions
+
+Table: sessions
+
+Columns:
+
+- id
+- session_id
+- status
+- start_time
+- end_time
+- duration
+
+---
+
+## Events
+
+Table: events
+
+Columns:
+
+- id
+- session_id
+- event_type
+- timestamp
+- payload
+
+Payload stored as JSON.
+
+---
+
+## Event Types
+
+- session_start
+- llm_call
+- tool_call
+- tool_response
+- memory_update
+- error
+- final_response
+- session_end

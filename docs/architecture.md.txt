@@ -1,0 +1,55 @@
+# AgentViz
+
+## Vision
+
+AgentViz is an open-source observability platform for AI agents.
+
+It helps developers understand, debug, and evaluate AI agent executions through workflow visualization, tool inspection, memory tracking, and execution timelines.
+
+The goal is to become the Chrome DevTools for AI Agents.
+
+---
+
+## Problem Statement
+
+Developers struggle to understand:
+
+- Why an agent chose a tool
+- What payload was sent
+- What response was returned
+- What memory changed
+- Why execution failed
+
+AgentViz makes agent behavior transparent.
+
+---
+
+## Target Users
+
+- AI Engineers
+- Agent Developers
+- Students
+- Startups
+- AI Product Teams
+
+---
+
+## MVP Features
+
+- Session Viewer
+- Timeline Viewer
+- Workflow Visualization
+- Tool Call Inspector
+- Error Viewer
+- Memory Viewer
+
+---
+
+## Long-Term Vision
+
+- Agent Evaluation
+- Hallucination Detection
+- Workflow Validation
+- Token Tracking
+- Cost Analysis
+- Framework Integrations

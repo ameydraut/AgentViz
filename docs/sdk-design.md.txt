@@ -1,0 +1,49 @@
+# SDK Design
+
+Package:
+
+pip install agentviz
+
+Import:
+
+from agentviz import AgentTracer
+
+---
+
+## Core Functions
+
+start_session()
+
+end_session()
+
+log_tool_call()
+
+log_tool_response()
+
+log_llm_call()
+
+log_memory_update()
+
+log_error()
+
+log_final_response()
+
+---
+
+## Example
+
+tracer = AgentTracer()
+
+tracer.start_session()
+
+tracer.log_tool_call(...)
+
+tracer.end_session()
+
+---
+
+## Responsibilities
+
+- Generate session IDs
+- Track execution events
+- Send events to backend

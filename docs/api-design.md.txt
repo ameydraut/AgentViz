@@ -1,0 +1,49 @@
+# API Design
+
+Base URL
+
+/api/v1
+
+---
+
+## Create Session
+
+POST /sessions
+
+Response:
+
+{
+  "session_id": "abc123"
+}
+
+---
+
+## Create Event
+
+POST /events
+
+Request:
+
+{
+  "session_id": "abc123",
+  "event_type": "tool_call",
+  "payload": {}
+}
+
+---
+
+## Get Sessions
+
+GET /sessions
+
+---
+
+## Get Session Details
+
+GET /sessions/{session_id}
+
+---
+
+## Get Events
+
+GET /sessions/{session_id}/events
