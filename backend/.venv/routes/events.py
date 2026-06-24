@@ -20,4 +20,14 @@ def get_sessionEvents(sessionId:str):
         for event in events
         if event["session_id"] == sessionId
         ]
-        
+@router.get("/session/{sessionId}/timelinedata")
+def get_eventTimeLine(sessionId:str):
+    session_events =[
+        event
+        for event in events
+        if event["session_id"] == sessionId
+    ] 
+    return sorted(
+        session_events,
+        key=lambda event:event["timestamp"]
+    )
