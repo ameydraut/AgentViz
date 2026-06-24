@@ -1,7 +1,7 @@
-from pydantic import BaseModel
 from datetime import datetime
-class Session(BaseModel):
-    session_id:str
+from sqlmodel import SQLModel , Field
+class Session(SQLModel, table = True):
+    session_id:str=Field(primary_key=True)
     status:str
     user_query:str
     created_at:datetime
