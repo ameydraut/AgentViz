@@ -13,5 +13,15 @@ def create_session():
     return session
 
 @router.get("/sessions")
-def get_sessions():
+def get_allSessions():
     return sessions
+
+@router.get("/sessions/{session_id}")
+def get_session(sessionID: str):
+    for session in sessions:
+        if session["session_id"] == sessionID:
+            return session
+    return{
+        "message": "Session not found"
+    }
+

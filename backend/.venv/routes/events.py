@@ -3,6 +3,7 @@ from models.event import Event
 from fastapi import APIRouter
 router = APIRouter()
 events=[]
+
 @router.post("/events")
 def create_event(event:Event):
     events.append(event.model_dump())
@@ -11,3 +12,12 @@ def create_event(event:Event):
 @router.get("/events")
 def get_event():
     return events
+
+@router.get("/sessions/{sessionId}/event")
+def get_sessionEvents(sessionId:str):
+    return [ 
+        event
+        for event in events
+        if event["session_id"] == sessionId
+        ]
+        
