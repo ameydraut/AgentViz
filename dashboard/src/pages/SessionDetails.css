@@ -1,0 +1,32 @@
+.session-page {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 30px;
+    color: white;
+}
+
+.session-page h1 {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.summary-card {
+    background: #1f1f1f;
+    padding: 25px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    border: 1px solid #333;
+}
+
+.summary-card p {
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+.timeline-section {
+    margin-top: 20px;
+}
+
+.timeline-section h2 {
+    margin-bottom: 20px;
+}

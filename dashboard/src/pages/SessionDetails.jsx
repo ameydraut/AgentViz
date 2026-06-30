@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Timeline from "../components/Timeline";
-
+import "./SessionDetails.css";
 function SessionDetails(){
     const { session_id } = useParams()
     const [summary , setSummary] = useState(null);
@@ -20,27 +20,38 @@ function SessionDetails(){
         },[session_id]
     )
 
-    if (!summary) {
+  if (!summary || !timeline) {
     return <h2>Loading...</h2>;
 }
-    if(!timeline){
-        return <h2>Loading....</h2>
-    }
     return(
-        <div>
+        <div className="session-page">
             <h1>Session Details</h1>
-            <p>Status: {summary.status}</p>
-            <p>User Query: {summary.user_query}</p>
-            <p>Response: {summary.response}</p>
-            <p>Duration in ms: {summary.duration_ms}</p>
-            <p>Total Events: {summary.total_events}</p>
-            <p>Tool Calls: {summary.tool_calls}</p>
-            <p>LLM Calls: {summary.llm_calls}</p>
-            <p>Tools Used: {summary.tools_used.join(",")}</p>
-            <p>First Event: {summary.first_event}</p>
-            <p>Last Event: {summary.last_event}</p>
 
-            <Timeline events={timeline} ></Timeline>
+            <div className="summary-card">
+
+    <p><strong>Status:</strong> {" "}
+    {summary.status === "running" ? "🟢 Running" : "🔴 Failed"}
+    </p>
+
+    <p><strong>User Query:</strong> {summary.user_query}</p>
+
+    <p><strong>Response:</strong> {summary.response}</p>
+
+    <p><strong>Duration:</strong> {summary.duration_ms} ms</p>
+
+    <p><strong>Total Events:</strong> {summary.total_events}</p>
+
+    <p><strong>Tool Calls:</strong> {summary.tool_calls}</p>
+
+    <p><strong>LLM Calls:</strong> {summary.llm_calls}</p>
+
+    <p><strong>Tools Used:</strong> {summary.tools_used.join(", ")}</p>
+
+</div>
+
+            <div className="timeline-section">
+            <Timeline events={timeline} />
+            </div>
 
         </div>
     );
