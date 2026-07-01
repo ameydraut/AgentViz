@@ -11,3 +11,6 @@ class Event(SQLModel, table=True):
     event_type: EventType
     payload: dict = Field(sa_column=Column(JSON))
     timestamp: datetime = Field(default_factory=datetime.now)
+    response: dict = Field(sa_column=Column(JSON))
+    token_usage: int
+    duration_ms: int

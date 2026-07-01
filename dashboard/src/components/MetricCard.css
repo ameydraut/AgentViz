@@ -1,0 +1,21 @@
+.metricCard{
+    background:#1f1f1f;
+    border:1px solid #333;
+    border-radius:10px;
+
+    padding:20px;
+
+    width:180px;
+
+    text-align:center;
+}
+.metric-card h3{
+    margin:0;
+    color:#bbbbbb;
+    font-size:16px;
+}
+
+.metric-card h2{
+    margin-top:15px;
+    font-size:28px;
+}

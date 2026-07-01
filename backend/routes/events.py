@@ -4,6 +4,7 @@ from fastapi import Depends
 from models.event import Event
 from fastapi import APIRouter
 from database.database import get_db
+from fastapi import HTTPException 
 router = APIRouter()
 events=[]
 
@@ -22,10 +23,12 @@ def get_event(db: Session =Depends(get_db)):
     ).all()
     return events
 
-@router.get("/sessions/{sessionId}/event")
-def get_sessionEvents(sessionId:str,
+@router.get("/sessions/{sessionId}/event/{eventId}")
+def get_sessionEvents(sessionId:str, eventId:str,
                       db: Session =Depends(get_db)):
-    event = db.exec(select(Event).where(Event.session_id == sessionId)).all()
+    event = db.exec(select(Event).where(Event.session_id == sessionId, Event.id == eventId)).first()
+    if event is None:
+        raise HTTPException(status_code=404, detail="Event not found")
     return event
 
 @router.get("/session/{sessionId}/timelinedata")

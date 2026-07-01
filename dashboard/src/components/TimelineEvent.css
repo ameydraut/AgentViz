@@ -1,4 +1,5 @@
 .timeline-event {
+    width:420px;
     background: #1f1f1f;
     border-left: 5px solid #4CAF50;
     padding: 15px 20px;
@@ -19,4 +20,46 @@
 .event-time {
     margin-top: 8px;
     color: #b0b0b0;
+}
+.timeline-item{
+    display:flex;
+    align-items:flex-start;
+    gap:15px;
+    margin-bottom:20px;
+}
+
+
+.timeline-column{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+.timeline-dot{
+    width:12px;
+    height:12px;
+    background:#4CAF50;
+    border-radius:50%;
+}
+
+.timeline-connector{
+    width:3px;
+    height:90px;
+    background:#4CAF50;
+}
+
+.event-details{
+
+    margin-top:15px;
+
+    padding-top:15px;
+
+    border-top:1px solid #444;
+
+}
+
+.event-details p{
+
+    margin:8px 0;
+
 }

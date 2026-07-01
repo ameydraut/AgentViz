@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Timeline from "../components/Timeline";
 import "./SessionDetails.css";
+import "../components/MetricCard"
+import MetricCard from "../components/MetricCard";
 function SessionDetails(){
     const { session_id } = useParams()
     const [summary , setSummary] = useState(null);
@@ -48,6 +50,25 @@ function SessionDetails(){
     <p><strong>Tools Used:</strong> {summary.tools_used.join(", ")}</p>
 
 </div>
+
+        <div className="metrics-container">
+            <MetricCard
+                title="Duration"
+                value={`${summary.duration_ms} ms`}
+            />
+            <MetricCard
+                title="Tool Calls"
+                value={`${summary.tool_calls}`}
+            />
+            <MetricCard
+                title="LLM Calls"
+                value={`${summary.llm_calls}`}
+            />
+            <MetricCard
+                title="Tools Used"
+                value={`${summary.tools_used}`}
+            />
+        </div>
 
             <div className="timeline-section">
             <Timeline events={timeline} />
